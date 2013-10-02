@@ -1,0 +1,29 @@
+Logfile initialized
+ers/jinx/Documents/Titanium_Studio_Workspace/Cothran_Michael_Project1/build.log
+[INFO] logfile = /Users/jinx/Documents/Titanium_Studio_Workspace/Cothran_Michael_Project1/build.log
+[DEBUG] /Users/jinx/Library/Application Support/Titanium/mobilesdk/osx/3.1.3.GA/android/builder.py simulator Cothran_Michael_Project1 /Users/jinx/Downloads/adt-bundle-mac-x86_64-20130917/sdk /Users/jinx/Documents/Titanium_Studio_Workspace/Cothran_Michael_Project1 com.fullsail.project1 2 WVGA854
+[DEBUG] /Users/jinx/Library/Application Support/Titanium/mobilesdk/osx/3.1.3.GA/android/builder.py emulator Cothran_Michael_Project1 /Users/jinx/Downloads/adt-bundle-mac-x86_64-20130917/sdk /Users/jinx/Documents/Titanium_Studio_Workspace/Cothran_Michael_Project1 com.fullsail.project1 2 WVGA854 armeabi
+[INFO] Launching Android emulator...one moment
+[DEBUG] From: /Users/jinx/Downloads/adt-bundle-mac-x86_64-20130917/sdk/tools/emulator
+[DEBUG] SDCard: /Users/jinx/.titanium/android2.sdcard
+[DEBUG] AVD ID: 2
+[DEBUG] AVD Skin: WVGA854
+[DEBUG] AVD ABI: armeabi
+[DEBUG] SDK: /Users/jinx/Downloads/adt-bundle-mac-x86_64-20130917/sdk
+[INFO] Building Cothran_Michael_Project1 for Android ... one moment
+[INFO] Titanium SDK version: 3.1.3 (09/18/13 12:00 222f4d1)
+[DEBUG] Waiting for device to be ready ...
+[TRACE] adb devices returned 0 devices/emulators
+[INFO] Creating 64M SD card for use in Android emulator
+[INFO] Creating new Android Virtual Device (2 WVGA854)
+[DEBUG] /Users/jinx/Downloads/adt-bundle-mac-x86_64-20130917/sdk/tools/emulator -avd titanium_2_WVGA854 -port 5560 -sdcard /Users/jinx/.titanium/titanium_2_WVGA854.sdcard -logcat *:d,*,TiAPI:V -no-boot-anim -partition-size 128
+[TRACE] adb devices returned 0 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[TRACE] adb devices returned 1 devices/emulators
+[DEBUG] Device connected... (waited 25 seconds)
+[DEBUG] waited 25.094991 seconds on emulator to get ready
+[INFO] Waiting for the Android Emulator to become available
+[INFO] Android Emulator has exited
+[ERROR] Exception occured while building Android project:
