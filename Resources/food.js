@@ -3,7 +3,7 @@ var food = ["pasta", "Salad", "Apple", "Pizza"];
 	
 	var displayAlert = function(){
 	quoteText.text=food[1];
-
+n
 	//for(var i=0, j=food.length; i<j; i++){
 };		
 	
