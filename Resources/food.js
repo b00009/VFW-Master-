@@ -5,7 +5,7 @@ var	counter=0;
         for (var i=0, item; i<food.length; i++) {
         counter= (counter + 1) % food.length;	
     	item = food[i];
-        //quoteText.text=food[i];
+        quoteText.text=food[i];
 }	
 };		
 	
