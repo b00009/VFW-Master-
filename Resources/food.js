@@ -1,10 +1,12 @@
 var food = ["pasta", "Salad", "Apple", "Pizza"];
+var	counter=0;
 	
-	
-	var displayAlert = function(){
-	quoteText.text=food[1];
-n
-	//for(var i=0, j=food.length; i<j; i++){
+	var displayAlert = function(){ 
+        for (var i=0, item; i<food.length; i++) {
+        counter= (counter + 1) % food.length;	
+    	item = food[i];
+        //quoteText.text=food[i];
+}	
 };		
 	
 	var quoteView = Ti.UI.createView({
