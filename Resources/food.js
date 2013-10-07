@@ -1,14 +1,22 @@
 var food = ["pasta", "Salad", "Apple", "Pizza"];
-var	counter=0;
+	counter=0;
 	
-	var displayAlert = function(){ 
-        for (var i=0, item; i<food.length; i++) {
-        counter= (counter + 1) % food.length;	
-    	item = food[i];
-        quoteText.text=food[i];
-}	
+	var displayAlert = function(){
+		console.log (counter);
+	quoteText.text=food[counter];
+	if (counter === food.length-1){
+		counter=0;	
+	}
+	else {counter=counter+1};
 };		
-	
+	var getPrevious = function(){
+		quoteText.text=food[counter];
+	if (counter === 0){
+		counter=food.length-1;
+	}
+	else {counter=counter-1};
+		
+};
 	var quoteView = Ti.UI.createView({
 	backgroundColor: "#fff",
 	height: 150,
@@ -29,6 +37,5 @@ var quoteText = Ti.UI.createLabel({
 	mainWindow.add(quoteView);
 	
 
-
-buttonPrevious.addEventListener("click", displayAlert);
+buttonPrevious.addEventListener("click", getPrevious);
 buttonNext.addEventListener("click", displayAlert);
