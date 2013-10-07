@@ -1,14 +1,21 @@
 
-var mainWindow = Ti.UI.createWindow({
-	title: "Event Listeners & Event Holders",
-	modal: true,
-	backgroundColor: "#333"
-});
+var tabGroup = Ti.UI.createTabGroup();
 
+var mainWindow = Ti.UI.createWindow({
+	title: "Main Menu",
+	tabBarHidden:true,
+	modal:true
+	});
+
+var tab = Ti.UI.createTab({
+    title:"",
+    window: mainWindow
+});
+ 
 
 var buttonPrevious = Ti.UI.createView({
 	backgroundColor: "#23ba00",
-	top: 400,
+	top: 350,
 	left: 20,
 	right: 20,
 	borderRadius: 5,
@@ -24,7 +31,7 @@ var buttonTextP = Ti.UI.createLabel({
 
 var buttonNext = Ti.UI.createView({
 	backgroundColor: "#23ba00",
-	top: 340,
+	top: 290,
 	left: 20,
 	right: 20,
 	borderRadius: 5,
@@ -40,6 +47,8 @@ var buttonTextN = Ti.UI.createLabel({
 
 var foodFile = require('food');
 
+tabGroup.addTab(tab);
+tabGroup.open();
 buttonPrevious.add(buttonTextP);
 buttonNext.add(buttonTextN);
 mainWindow.add(buttonPrevious);
