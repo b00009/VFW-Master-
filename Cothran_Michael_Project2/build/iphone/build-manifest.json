@@ -1,0 +1,22 @@
+{
+	"target": "simulator",
+	"deployType": "development",
+	"deviceFamily": "iphone",
+	"iosSdkPath": "/Users/jinx/Library/Application Support/Titanium/mobilesdk/osx/3.1.3.GA/iphone",
+	"appGuid": "a27c55d9-f26b-4274-9b74-bb9056fdb71b",
+	"tiCoreHash": "77157e1ffaec640cf559356a147b6a4c",
+	"modulesHash": "d41d8cd98f00b204e9800998ecf8427e",
+	"gitHash": "222f4d1",
+	"name": "Cothran_Michael_Project2",
+	"id": "com.fullsail.Project2",
+	"analytics": true,
+	"publisher": "jinx",
+	"url": "http://",
+	"version": "1.0",
+	"description": "not specified",
+	"copyright": "2013 by jinx",
+	"guid": "a27c55d9-f26b-4274-9b74-bb9056fdb71b",
+	"skipJSMinification": true,
+	"forceCopy": false,
+	"forceCopyAll": false
+}

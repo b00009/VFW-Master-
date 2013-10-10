@@ -1,0 +1,98 @@
+//
+var myList = {
+	
+		"empire":{
+			'leftImage': '/images/empire.jpg',
+			"headTitle": "Empire",
+			"footTitle": "The New Order",
+			"movieCharacters":[
+			{'name': 'Darth Vader', 'backgroundImage': '/images/vader.jpg','description': 'Once known as Anikin Skywalker, once a very powerful Jedi,he turned to the darkside.'},
+			{'name': 'Emporer Palpitine','backgroundImage': '/images/ep.jpg', 'description': 'Once a senator of the Republic, he betrayed the people, and the Jedi by forming the empire.'},
+			{'name': 'Boba Fett','backgroundImage': '/images/Fett.jpg', 'description':'Boba Fett was a Mandalorian warrior and bounty hunter. He was a clone of the famed Jango Fett, created in 32 BBY as the first of many Fett replicas designed to become part of the Grand Army of the Republic, and was raised as Jangos son. Jango taught Boba much, training him to become a skilled bounty hunter as was his father-figure before him. In 22 BBY, Jango was killed at the Battle of Geonosis, which opened the Clone Wars. Just a boy Boba was forced to grow up and took to traveling the galaxy. Later he became a bounty hunter and took assignments from beings such as Jabba the Hutt and achieved notoriety despite his young age.'},
+			{'name': 'Darth Maul','backgroundImage': '/images/maul.jpg', 'description': 'Darth Maul was a male Dathomirian Zabrak Dark Lord of the Sith who lived during the waning years of the Galactic Republic. Originally a Dathomiri Nightbrother born on Iridonia and known only as Maul, the infant Maul was given by his Nightsister mother to the Sith Lord Darth Sidious, who trained him in the ways of the dark side of the Force as his secret apprentice on a secret Mustafar training facility, along with the help of a split personality droid.'}
+
+			]
+		},
+		'jedi':{
+			'leftImage': '/images/rebel.jpg',
+			'headTitle': 'Jedi',
+			'footTitle': 'Defenders of the Republic.',
+			'movieCharacters': [
+			{'name': 'Luke Skywalker', 'backgroundImage': '/images/luke.jpg','description': 'The son of Anikin Skywalker,was a legendary war hero and Jedi who helped defeat the Galactic Empire in the Galactic Civil War and helped found the New Republic, as well as the New Jedi Order.'},
+			{'name': 'Han Solo', 'backgroundImage': '/images/solo.jpg','description':'a Human smuggler from the manufacturing planet Corellia who achieved galactic fame as a member of the Rebel Alliance and later the New Republic.'},
+			{'name': 'obiwan', 'backgroundImage': '/images/obiwan.jpg','description':'Obi-Wan Kenobi, later known as Ben Kenobi during his exile, was a legendary Jedi Master who played a significant role in the fate of the galaxy during the waning days of the Galactic Republic. He was the mentor of both Anakin and Luke Skywalker, training both in the ways of the Force. He had a long and tumultuous career that helped shape the fate of the entire galaxy.'},
+			{'name': 'chewbacca', 'backgroundImage': '/images/chewie.jpg','description':'Chewbacca (or "Chewie", as he was known by his friends) was a legendary Wookiee from Kashyyyk and co-pilot of Han Solos ship, the Millennium Falcon. He was the son of Attichitcuk, the husband of Mallatobuck, and the father of Lumpawaroo. Chewbacca carried with him the name of an ancient Wookiee hero, the great Bacca, first of the great chieftains of Kashyyyk, and the creator of a sword that denoted leadership among the Wookiees. This name placed Chewbacca in a noble lineage, which was further supported by his role in the Battle of Kashyyyk during the Clone Wars and during the Galactic Civil War.'}
+
+			]
+		}
+};
+
+var win = Titanium.UI.createWindow({
+  backgroundColor:'transparent',
+  backgroundImage: '/images/stars.png',
+  opacity:0.92
+});
+
+
+var navWindow = Ti.UI.createWindow({
+	title: 'StarWars',
+	modal: true
+});
+
+var navGroup = Ti.UI.iPhone.createNavigationGroup({
+		window: navWindow
+});
+
+var table = Ti.UI.createTableView({
+	backgroundColor:'transparent',
+	separatorStyle:Ti.UI.iPhone.TableViewSeparatorStyle.NONE,
+	style: Ti.UI.iPhone.TableViewStyle.GROUPED
+});
+
+var getDetail = function(){
+	var detailWindow = Ti.UI.createWindow({
+		backgroundImage: this.image,
+		title: this.title,
+		modal: true
+	});
+	var detailText = Ti.UI.createLabel({
+		text: this.desc,
+		font: {fontsize:18, fontFamily: 'Arial'},
+		color:'yellow'
+	});
+	
+	detailWindow.add(detailText);
+	navGroup.open(detailWindow, {animation: true});
+};
+	
+var mySections = [];
+for(n in myList){
+	var tableSection = Ti.UI.createTableViewSection({
+		headerTitle: myList[n].headTitle,
+		footerTitle: myList[n].footTitle
+	});
+	for(var i=0, j=myList[n].movieCharacters.length; i<j; i++){
+		var theRow = Ti.UI.createTableViewRow({
+			backgroundColor: 'transparent',
+			backgroundImage:'/images/off_4.png',
+			selectedBackgroundImage:'/images/on_4.png', 
+			leftImage: myList[n].leftImage,
+			title: myList[n].movieCharacters[i].name,
+			desc: myList[n].movieCharacters[i].description,
+			image: myList[n].movieCharacters[i].backgroundImage,
+			hasChild: true
+		});
+		tableSection.add(theRow);
+		theRow.addEventListener('click', getDetail);
+	}
+	mySections.push(tableSection);
+}
+
+table.setData(mySections);
+
+
+
+navWindow.add(table);
+win.add(navGroup);
+win.open();	
+
